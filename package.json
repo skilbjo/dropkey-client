@@ -1,0 +1,30 @@
+{
+  "name": "dropkey-client",
+  "main": "app.js",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skilbjo/dropkey-client.git"
+  },
+  "engines": {
+    "node": "0.10.33"
+  },
+  "scripts": {
+    "start": "nodemon app.js" 
+    , "run": "nodemon app.js"
+  },
+  "dependencies": {
+    "dbox": "0.6.3"
+    , "node-dir": "0.1.6"
+    , "dbus-native": "0.2.0"
+    , "usb": "1.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "1.2.1" 
+    , "gulp": "3.8.11"
+  },
+  "jshintConfig": {
+    "laxcomma": true
+  }
+}
