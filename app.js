@@ -2,6 +2,16 @@
 // https://github.com/voodootikigod/node-serialport
 // https://github.com/sidorares/node-dbus
 
+var njds = require('nodejs-disks');
+
+njds.drives(function(err, drives) {
+	njds.drivesDetail(drives, function(err, drive) {
+		drive.forEach(function(drive) {
+			console.log(drive.mountpoint);
+		});
+	});
+});
+
 // var dbus = require('dbus-native');
 // var sessionBus = dbus.sessionBus();
 // sessionBus.getService('org.freedesktop.Notifications').getInterface(
@@ -21,16 +31,16 @@
 // });
 
 
-var dbus = require('dbus-native');
-var conn = dbus.createConnection();
-conn.message({
-    path:'/org/freedesktop/DBus',
-    destination: 'org.freedesktop.DBus',
-    'interface': 'org.freedesktop.DBus',
-    member: 'Hello',
-    type: dbus.messageType.methodCall
-});
-conn.on('message', function(msg) { console.log(msg); });
+// var dbus = require('dbus-native');
+// var conn = dbus.createConnection();
+// conn.message({
+//     path:'/org/freedesktop/DBus',
+//     destination: 'org.freedesktop.DBus',
+//     'interface': 'org.freedesktop.DBus',
+//     member: 'Hello',
+//     type: dbus.messageType.methodCall
+// });
+// conn.on('message', function(msg) { console.log(msg); });
 
 // var usb = require('usb'),
 // 	connected = usb.getDeviceList(),
