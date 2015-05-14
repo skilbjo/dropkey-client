@@ -1,6 +1,7 @@
 # Ignore these files & directories
 .DS_Store
 node_modules
+config.js
 *.sock
 *env*
 newrelic_agent.log
